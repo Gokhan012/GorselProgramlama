@@ -11,14 +11,37 @@ namespace GorselProgramlama.UI;
 public partial class RegisterPage : Form
 {
     LoginPage _loginPage;
+    AuthService authService = new AuthService();
     public RegisterPage(LoginPage loginPage)
     {
         InitializeComponent();
         _loginPage = loginPage;
+
     }
 
     private void button2_Click(object sender, EventArgs e)
     {
-        
+
+        try
+        {
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text) || string.IsNullOrEmpty(textBox5.Text))
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurunuz.");
+                return;
+            }
+            else
+            {
+                authService.CreateUser(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+
+                MessageBox.Show("Kayıt Başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
+
+                _loginPage.Show();
+                this.Close();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Kayıt başarısız: " + ex.Message);
+        }
     }
 }

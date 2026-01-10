@@ -19,7 +19,7 @@ internal class AuthRepository : IAuthRepository
             conn.Open();
 
             // Sütun isimlerini açıkça belirtmek zorundayız.
-            string query = "INSERT INTO dbo.Users (PlateNumber, Password, Name, Surname) VALUES (@plaka, @sifre, @ad, @soyad)";
+            string query = "INSERT INTO dbo.tblUser (PlateNumber, Password, Name, Surname) VALUES (@plaka, @sifre, @ad, @soyad)";
 
             using (var cmd = new SqlCommand(query, conn))
             {

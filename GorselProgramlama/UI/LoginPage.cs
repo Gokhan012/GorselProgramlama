@@ -1,8 +1,11 @@
-﻿using System;
+﻿using GorselProgramlama.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Numerics;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
@@ -10,6 +13,7 @@ namespace GorselProgramlama.UI;
 
 public partial class LoginPage : Form
 {
+    AuthService authService = new AuthService();
     public LoginPage()
     {
         InitializeComponent();
@@ -17,9 +21,29 @@ public partial class LoginPage : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        FloorSelectionPage floorSelectionPage = new FloorSelectionPage();
-        floorSelectionPage.Show();
-        this.Hide();
+        //if(textBox1.Text=="admin" && textBox2.Text=="admin")
+        // {
+        //     MessageBox.Show("Admin Girişi Başarılı");
+        //     AdminPage adminPage = new AdminPage();
+        //     adminPage.Show();
+        //     this.Hide();
+        // }
+        if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+        {
+            MessageBox.Show("Lütfen plaka ve şifre alanlarını doldurunuz.");
+            return;
+        }
+        else if (authService.Login(textBox1.Text, textBox2.Text))
+        {
+            MessageBox.Show("Giriş Başarılı");
+            FloorSelectionPage floorSelectionPage = new FloorSelectionPage();
+            floorSelectionPage.Show();
+            this.Hide();
+        }
+        else
+        {
+            MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı");
+        }
     }
 
     private void button2_Click(object sender, EventArgs e)

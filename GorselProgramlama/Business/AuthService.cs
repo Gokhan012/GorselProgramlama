@@ -8,26 +8,26 @@ namespace GorselProgramlama.Business
 {
     internal class AuthService
     {
-        // Connection string'i buraya koymuşsunuz ama normalde appsettings.json'da olması daha iyidir.
-        static string _connString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Hafta12;Integrated Security=True;TrustServerCertificate=True";
-
-        // IAuthRepository arayüzünü değil direkt sınıfı kullanıyorsanız burayı AuthRepository yapabilirsiniz.
         AuthRepository _repo;
-
+        static string _connString =//buraya lokal olarak oluşturduğunuz veritabanının bağlantı cümlesini yaz
+            "Data Source=DESKTOP-XXXXXXX;Initial Catalog=YourDatabase;Integrated Security=True";
         public AuthService()
         {
             _repo = new AuthRepository(_connString);
         }
 
-        public void CreateUser(string plateNumber, string password, string name, string surname)
+        public void CreateUser(string plateNumber, string password,string passwordagain, string name, string surname)
         {
             tblUser u = new tblUser();
+            if (password != passwordagain)
+            {
+                throw new Exception("Şifreler uyuşmuyor.");
+            }
             u.PlateNumber = plateNumber;
             u.Name = name;
             u.Surname = surname;
-            // Şifreyi hashleyerek gönderiyoruz
             u.Password = GenerateHash(password);
-
+            
             _repo.CreateUser(u);
         }
 
@@ -42,20 +42,19 @@ namespace GorselProgramlama.Business
 
         public bool Login(string plateNumber, string password)
         {
-            // 1. Veritabanından kullanıcıyı plakaya göre çek
-            // Repository'deki metodumuz artık ID değil plaka bekliyor.
+            
             tblUser u = _repo.GetUser(plateNumber);
 
-            // 2. KRİTİK KONTROL: Kullanıcı var mı?
+
             if (u == null)
             {
-                return false; // Kullanıcı yoksa işlem biter.
+                return false; 
             }
 
-            // 3. Girilen şifreyi hashle
+         
             var inputPasswordHash = GenerateHash(password);
 
-            // 4. Karşılaştır (u.Password veritabanındaki hash'tir)
+          
             if (u.Password == inputPasswordHash)
             {
                 return true;
@@ -68,8 +67,6 @@ namespace GorselProgramlama.Business
 
         public void Logout()
         {
-            // Servis katmanında UI açmak (LoginPage show) mimari olarak hatalıdır ama
-            // projeniz basitse çalışır. Doğrusu UI katmanının bunu yönetmesidir.
             LoginPage loginpage = new LoginPage();
             loginpage.Show();
         }
