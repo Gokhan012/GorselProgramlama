@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using GorselProgramlama.Business;
 namespace GorselProgramlama.UI;
 
 public partial class RegisterPage : Form
@@ -19,7 +19,6 @@ public partial class RegisterPage : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
-        _loginPage.Show();
-        this.Hide();
+        
     }
 }

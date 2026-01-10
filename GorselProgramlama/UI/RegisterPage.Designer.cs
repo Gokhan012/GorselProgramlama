@@ -35,11 +35,15 @@
             textBox1 = new TextBox();
             textBox3 = new TextBox();
             label3 = new Label();
+            label4 = new Label();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            textBox5 = new TextBox();
             SuspendLayout();
             // 
             // button2
             // 
-            button2.Location = new Point(603, 332);
+            button2.Location = new Point(603, 443);
             button2.Name = "button2";
             button2.Size = new Size(156, 43);
             button2.TabIndex = 11;
@@ -101,11 +105,51 @@
             label3.TabIndex = 13;
             label3.Text = "Tekrar Şifre:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label4.Location = new Point(539, 339);
+            label4.Name = "label4";
+            label4.Size = new Size(62, 32);
+            label4.TabIndex = 15;
+            label4.Text = "İsim:";
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBox4.Location = new Point(603, 332);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(156, 43);
+            textBox4.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label5.Location = new Point(505, 388);
+            label5.Name = "label5";
+            label5.Size = new Size(96, 32);
+            label5.TabIndex = 17;
+            label5.Text = "Soyisim";
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            textBox5.Location = new Point(603, 381);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(156, 43);
+            textBox5.TabIndex = 16;
+            // 
             // RegisterPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1467, 618);
+            Controls.Add(label5);
+            Controls.Add(textBox5);
+            Controls.Add(label4);
+            Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(textBox3);
             Controls.Add(button2);
@@ -128,5 +172,9 @@
         private TextBox textBox1;
         private TextBox textBox3;
         private Label label3;
+        private Label label4;
+        private TextBox textBox4;
+        private Label label5;
+        private TextBox textBox5;
     }
 }

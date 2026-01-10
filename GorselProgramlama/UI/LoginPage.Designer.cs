@@ -96,7 +96,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1463, 609);
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1540, 624);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label2);
