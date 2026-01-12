@@ -43,7 +43,7 @@ internal class AuthRepository : IAuthRepository
         {
             conn.Open();
             // Sorguyu PlateNumber'a göre yapıyoruz
-            var cmd = new SqlCommand("SELECT * FROM dbo.Users WHERE PlateNumber = @p", conn);
+            var cmd = new SqlCommand("SELECT * FROM dbo.tblUser WHERE PlateNumber = @p", conn);
             cmd.Parameters.AddWithValue("@p", plateNumber);
 
             using (var dr = cmd.ExecuteReader())

@@ -9,8 +9,7 @@ namespace GorselProgramlama.Business
     internal class AuthService
     {
         AuthRepository _repo;
-        static string _connString =//buraya lokal olarak oluşturduğunuz veritabanının bağlantı cümlesini yaz
-            "Data Source=DESKTOP-XXXXXXX;Initial Catalog=YourDatabase;Integrated Security=True";
+        static string _connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data\Gorsel.mdf;Integrated Security=True;Connect Timeout=30";
         public AuthService()
         {
             _repo = new AuthRepository(_connString);
