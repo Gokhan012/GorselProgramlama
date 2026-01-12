@@ -52,4 +52,13 @@ public partial class LoginPage : Form
         registerPage.Show();
         this.Hide();
     }
+
+    private void LoginPage_Load(object sender, EventArgs e)
+    {
+        textBox1.TabIndex = 0;
+        textBox2.TabIndex = 1;
+        button1.TabIndex = 2;
+        button2.TabIndex = 3;
+        this.AcceptButton = button1;
+    }
 }

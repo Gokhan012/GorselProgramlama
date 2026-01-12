@@ -18,7 +18,7 @@ namespace GorselProgramlama.UI
         private void Allbuttons_Click(object sender, EventArgs e)
         {
             ParkingLotSelectingPage parkingLotSelectingPage = new ParkingLotSelectingPage();
-            parkingLotSelectingPage.Show();
+            parkingLotSelectingPage.ShowDialog();
             this.Hide();
         }
 

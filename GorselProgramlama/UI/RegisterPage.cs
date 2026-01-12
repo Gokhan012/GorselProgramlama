@@ -44,4 +44,15 @@ public partial class RegisterPage : Form
             MessageBox.Show("Kayıt başarısız: " + ex.Message);
         }
     }
+
+    private void RegisterPage_Load(object sender, EventArgs e)
+    {
+        textBox1.TabIndex = 0;
+        textBox2.TabIndex = 1;
+        textBox3.TabIndex = 2;
+        textBox4.TabIndex = 3;
+        textBox5.TabIndex = 4;
+        button.TabIndex = 5;
+        this.AcceptButton = button;
+    }
 }

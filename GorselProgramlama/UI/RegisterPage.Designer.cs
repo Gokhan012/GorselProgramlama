@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
+            button = new Button();
             label2 = new Label();
             label1 = new Label();
             textBox2 = new TextBox();
@@ -41,15 +41,15 @@
             textBox5 = new TextBox();
             SuspendLayout();
             // 
-            // button2
+            // button
             // 
-            button2.Location = new Point(603, 443);
-            button2.Name = "button2";
-            button2.Size = new Size(156, 43);
-            button2.TabIndex = 11;
-            button2.Text = "Kayıt Ol";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button.Location = new Point(603, 443);
+            button.Name = "button";
+            button.Size = new Size(156, 43);
+            button.TabIndex = 11;
+            button.Text = "Kayıt Ol";
+            button.UseVisualStyleBackColor = true;
+            button.Click += button2_Click;
             // 
             // label2
             // 
@@ -152,20 +152,21 @@
             Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(textBox3);
-            Controls.Add(button2);
+            Controls.Add(button);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name = "RegisterPage";
             Text = "RegisterPage";
+            Load += RegisterPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button2;
+        private Button button;
         private Label label2;
         private Label label1;
         private TextBox textBox2;

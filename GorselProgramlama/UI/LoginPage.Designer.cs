@@ -106,6 +106,7 @@
             Controls.Add(textBox1);
             Name = "LoginPage";
             Text = "LoginPage";
+            Load += LoginPage_Load;
             ResumeLayout(false);
             PerformLayout();
         }
