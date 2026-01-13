@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             button1 = new Button();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,8 +42,28 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(381, 153);
             panel1.Name = "panel1";
-            panel1.Size = new Size(728, 277);
+            panel1.Size = new Size(728, 309);
             panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(235, 207);
+            button1.Name = "button1";
+            button1.Size = new Size(196, 49);
+            button1.TabIndex = 2;
+            button1.Text = "Ödemeyi Tamamla";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label2.Location = new Point(496, 226);
+            label2.Name = "label2";
+            label2.Size = new Size(182, 30);
+            label2.TabIndex = 1;
+            label2.Text = "Hesaplanan Ücret:";
             // 
             // label1
             // 
@@ -54,25 +74,6 @@
             label1.Size = new Size(133, 30);
             label1.TabIndex = 0;
             label1.Text = "Kalınan Süre:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label2.Location = new Point(235, 115);
-            label2.Name = "label2";
-            label2.Size = new Size(132, 30);
-            label2.TabIndex = 1;
-            label2.Text = "Toplam Süre:";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(235, 163);
-            button1.Name = "button1";
-            button1.Size = new Size(196, 49);
-            button1.TabIndex = 2;
-            button1.Text = "Ödemeyi Tamamla";
-            button1.UseVisualStyleBackColor = true;
             // 
             // PaymentPage
             // 

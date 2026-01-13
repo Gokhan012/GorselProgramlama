@@ -6,13 +6,15 @@ using System.Text;
 
 namespace GorselProgramlama.Business
 {
-    internal class AuthService
+    public class AuthService
     {
+        public static int CurrentUserId = 0;
+        public static string CurrentUserPlate = "";
         AuthRepository _repo;
-        static string _connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data\Gorsel.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string _connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Data\Gorsel.mdf;Integrated Security=True;Connect Timeout=30";
         public AuthService()
         {
-            _repo = new AuthRepository(_connString);
+            _repo = new AuthRepository();
         }
 
         public void CreateUser(string plateNumber, string password,string passwordagain, string name, string surname)
@@ -56,6 +58,8 @@ namespace GorselProgramlama.Business
           
             if (u.Password == inputPasswordHash)
             {
+                CurrentUserId = u.ID;             
+                CurrentUserPlate = u.PlateNumber;
                 return true;
             }
             else
@@ -66,6 +70,8 @@ namespace GorselProgramlama.Business
 
         public void Logout()
         {
+            CurrentUserId = 0;
+            CurrentUserPlate = "";
             LoginPage loginpage = new LoginPage();
             loginpage.Show();
         }

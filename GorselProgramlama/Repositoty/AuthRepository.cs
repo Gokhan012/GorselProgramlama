@@ -1,20 +1,21 @@
-﻿using GorselProgramlama.Data;
+﻿using GorselProgramlama.Business;
+using GorselProgramlama.Data;
+using GorselProgramlama.Properties;
 using Microsoft.Data.SqlClient;
 
 namespace GorselProgramlama.Repositoty;
 
-internal class AuthRepository : IAuthRepository
+public class AuthRepository : IAuthRepository
 {
-    private string _connString;
-    public AuthRepository(string connectionString)
+    public AuthRepository()
     {
-        _connString = connectionString;
+        
     }
 
     public void CreateUser(tblUser user)
     {
         // Using bloğu bağlantıyı iş bitince otomatik kapatır.
-        using (var conn = new SqlConnection(_connString))
+        using (var conn = new SqlConnection(AuthService._connString))
         {
             conn.Open();
 
@@ -39,7 +40,7 @@ internal class AuthRepository : IAuthRepository
     {
         tblUser u = null; // Başlangıçta null olsun.
 
-        using (var conn = new SqlConnection(_connString))
+        using (var conn = new SqlConnection(AuthService._connString))
         {
             conn.Open();
             // Sorguyu PlateNumber'a göre yapıyoruz
@@ -61,5 +62,74 @@ internal class AuthRepository : IAuthRepository
             }
         }
         return u;
+    }
+
+    public class ParkingRepository
+    {
+        
+
+        // Belirli bir kattaki DOLU park yerlerini getirir
+        public List<tblParkIslemleri> GetDoluParkYerleri(int katNo)
+        {
+            List<tblParkIslemleri> doluYerListesi = new List<tblParkIslemleri>();
+
+            using (SqlConnection conn = new SqlConnection(AuthService._connString))
+            {
+               
+                    conn.Open();
+
+                    // Sadece Çıkış Saati NULL olanları (Hala içeridekileri) getir
+                    // Eğer Plaka bilgisini de çekmek istersen JOIN kullanman gerekir.
+                    // Şimdilik sadece UserID ve ParkYeriNumarasi çekiyoruz.
+                    string query = @"
+                        SELECT ParkYeriNumarasi, UserID, GirisSaati 
+                        FROM tblParkIslemleri 
+                        WHERE KatNumarasi = @kat AND CikisSaati IS NULL";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@kat", katNo);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                tblParkIslemleri kayit = new tblParkIslemleri();
+
+                                // Veritabanından gelenleri class'a doldur
+                                kayit.ParkYeriNumarasi = Convert.ToInt32(reader["ParkYeriNumarasi"]);
+                                kayit.UserID = Convert.ToInt32(reader["UserID"]);
+                                kayit.GirisSaati = Convert.ToDateTime(reader["GirisSaati"]);
+
+                                doluYerListesi.Add(kayit);
+                            }
+                        }
+                    }
+               
+            }
+            return doluYerListesi;
+        }
+    }
+
+    public void VeritabaniniKompleSifirla()
+    {
+        using (SqlConnection conn = new SqlConnection(AuthService._connString))
+        {
+            conn.Open();
+
+            // SQL Kodu: Önce Park İşlemleri, Sonra Kullanıcılar silinir.
+            // ID sayaçları (Identity) 0'a eşitlenir.
+            string query = @"
+            DELETE FROM tblParkIslemleri;
+            DBCC CHECKIDENT ('tblParkIslemleri', RESEED, 0);
+
+            DELETE FROM tblUser;
+            DBCC CHECKIDENT ('tblUser', RESEED, 0);";
+
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

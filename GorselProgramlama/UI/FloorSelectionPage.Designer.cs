@@ -38,6 +38,7 @@
             progressBar3 = new ProgressBar();
             progressBar4 = new ProgressBar();
             button5 = new Button();
+            button6 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -132,11 +133,22 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // button6
+            // 
+            button6.Location = new Point(1307, 526);
+            button6.Name = "button6";
+            button6.Size = new Size(130, 57);
+            button6.TabIndex = 10;
+            button6.Text = "Veritabanı sıfırlama";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
             // FloorSelectionPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1473, 612);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(progressBar4);
             Controls.Add(progressBar3);
@@ -165,5 +177,6 @@
         private ProgressBar progressBar3;
         private ProgressBar progressBar4;
         private Button button5;
+        private Button button6;
     }
 }

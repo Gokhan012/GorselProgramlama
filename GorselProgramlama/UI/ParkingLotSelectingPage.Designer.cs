@@ -51,8 +51,10 @@
             button1.Name = "button1";
             button1.Size = new Size(235, 86);
             button1.TabIndex = 0;
+            button1.Tag = "1";
             button1.Text = "BOŞ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += ParkYeri_Click;
             // 
             // button2
             // 
@@ -63,8 +65,10 @@
             button2.Name = "button2";
             button2.Size = new Size(235, 86);
             button2.TabIndex = 1;
+            button2.Tag = "2";
             button2.Text = "BOŞ";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += ParkYeri_Click;
             // 
             // button3
             // 
@@ -75,8 +79,10 @@
             button3.Name = "button3";
             button3.Size = new Size(235, 86);
             button3.TabIndex = 2;
+            button3.Tag = "3";
             button3.Text = "BOŞ";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += ParkYeri_Click;
             // 
             // button4
             // 
@@ -87,8 +93,10 @@
             button4.Name = "button4";
             button4.Size = new Size(235, 86);
             button4.TabIndex = 3;
+            button4.Tag = "4";
             button4.Text = "BOŞ";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += ParkYeri_Click;
             // 
             // button5
             // 
@@ -99,8 +107,10 @@
             button5.Name = "button5";
             button5.Size = new Size(235, 86);
             button5.TabIndex = 7;
+            button5.Tag = "8";
             button5.Text = "BOŞ";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += ParkYeri_Click;
             // 
             // button6
             // 
@@ -111,8 +121,10 @@
             button6.Name = "button6";
             button6.Size = new Size(235, 86);
             button6.TabIndex = 6;
+            button6.Tag = "7";
             button6.Text = "BOŞ";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += ParkYeri_Click;
             // 
             // button7
             // 
@@ -123,8 +135,10 @@
             button7.Name = "button7";
             button7.Size = new Size(235, 86);
             button7.TabIndex = 5;
+            button7.Tag = "6";
             button7.Text = "BOŞ";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += ParkYeri_Click;
             // 
             // button8
             // 
@@ -135,8 +149,10 @@
             button8.Name = "button8";
             button8.Size = new Size(235, 86);
             button8.TabIndex = 4;
+            button8.Tag = "5";
             button8.Text = "BOŞ";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += ParkYeri_Click;
             // 
             // button9
             // 
@@ -147,8 +163,10 @@
             button9.Name = "button9";
             button9.Size = new Size(235, 86);
             button9.TabIndex = 11;
+            button9.Tag = "12";
             button9.Text = "BOŞ";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += ParkYeri_Click;
             // 
             // button10
             // 
@@ -159,8 +177,10 @@
             button10.Name = "button10";
             button10.Size = new Size(235, 86);
             button10.TabIndex = 10;
+            button10.Tag = "11";
             button10.Text = "BOŞ";
             button10.UseVisualStyleBackColor = false;
+            button10.Click += ParkYeri_Click;
             // 
             // button11
             // 
@@ -171,8 +191,10 @@
             button11.Name = "button11";
             button11.Size = new Size(235, 86);
             button11.TabIndex = 9;
+            button11.Tag = "10";
             button11.Text = "BOŞ";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += ParkYeri_Click;
             // 
             // button12
             // 
@@ -183,8 +205,10 @@
             button12.Name = "button12";
             button12.Size = new Size(235, 86);
             button12.TabIndex = 8;
+            button12.Tag = "9";
             button12.Text = "BOŞ";
             button12.UseVisualStyleBackColor = false;
+            button12.Click += ParkYeri_Click;
             // 
             // ParkingLotSelectingPage
             // 

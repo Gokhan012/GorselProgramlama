@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using GorselProgramlama.Business;
+using GorselProgramlama.Repositoty;
 namespace GorselProgramlama.UI;
 
 public partial class RegisterPage : Form
