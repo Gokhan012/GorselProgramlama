@@ -36,14 +36,23 @@ namespace GorselProgramlama.UI
 
                 DateTime cikisSaati = DateTime.Now;
                 TimeSpan sure = cikisSaati - girisSaati;
-                double toplamSaat = Math.Ceiling(sure.TotalHours);
 
-                if (toplamSaat < 1) toplamSaat = 1;
+                if (sure.TotalMinutes <= 15)
+                {
+                    _hesaplananUcret = 0;
+                    label1.Text = $"Giriş: {girisSaati.ToShortTimeString()}\nÇıkış: {cikisSaati.ToShortTimeString()}\nSüre: {sure.TotalMinutes:F0} Dakika (Ücretsiz)";
+                }
+                else
+                {
+                    double toplamSaat = Math.Ceiling(sure.TotalHours);
+                    if (toplamSaat < 1) toplamSaat = 1;
 
-                decimal saatlikUcret = 20;
-                _hesaplananUcret = (decimal)toplamSaat * saatlikUcret;
+                    decimal saatlikUcret = 20;
+                    _hesaplananUcret = (decimal)toplamSaat * saatlikUcret;
 
-                label1.Text = $"Giriş: {girisSaati.ToShortTimeString()}\nÇıkış: {cikisSaati.ToShortTimeString()}\nSüre: {toplamSaat} Saat";
+                    label1.Text = $"Giriş: {girisSaati.ToShortTimeString()}\nÇıkış: {cikisSaati.ToShortTimeString()}\nSüre: {toplamSaat} Saat";
+                }
+
                 label2.Text = $"Hesaplanan Ücret: {_hesaplananUcret} TL";
             }
             catch (Exception ex)

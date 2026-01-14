@@ -34,10 +34,6 @@
             button3 = new Button();
             button4 = new Button();
             label1 = new Label();
-            progressBar1 = new ProgressBar();
-            progressBar2 = new ProgressBar();
-            progressBar3 = new ProgressBar();
-            progressBar4 = new ProgressBar();
             button5 = new Button();
             button6 = new Button();
             label2 = new Label();
@@ -133,42 +129,6 @@
             label1.TabIndex = 4;
             label1.Text = "Kat Seçiniz";
             // 
-            // progressBar1
-            // 
-            progressBar1.Anchor = AnchorStyles.None;
-            progressBar1.Location = new Point(14, 357);
-            progressBar1.Margin = new Padding(5, 6, 5, 6);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(324, 31);
-            progressBar1.TabIndex = 5;
-            // 
-            // progressBar2
-            // 
-            progressBar2.Anchor = AnchorStyles.None;
-            progressBar2.Location = new Point(379, 357);
-            progressBar2.Margin = new Padding(5, 6, 5, 6);
-            progressBar2.Name = "progressBar2";
-            progressBar2.Size = new Size(324, 31);
-            progressBar2.TabIndex = 6;
-            // 
-            // progressBar3
-            // 
-            progressBar3.Anchor = AnchorStyles.None;
-            progressBar3.Location = new Point(744, 357);
-            progressBar3.Margin = new Padding(5, 6, 5, 6);
-            progressBar3.Name = "progressBar3";
-            progressBar3.Size = new Size(324, 31);
-            progressBar3.TabIndex = 7;
-            // 
-            // progressBar4
-            // 
-            progressBar4.Anchor = AnchorStyles.None;
-            progressBar4.Location = new Point(1122, 357);
-            progressBar4.Margin = new Padding(5, 6, 5, 6);
-            progressBar4.Name = "progressBar4";
-            progressBar4.Size = new Size(324, 31);
-            progressBar4.TabIndex = 8;
-            // 
             // button5
             // 
             button5.Anchor = AnchorStyles.None;
@@ -221,10 +181,6 @@
             Controls.Add(label2);
             Controls.Add(button6);
             Controls.Add(button5);
-            Controls.Add(progressBar4);
-            Controls.Add(progressBar3);
-            Controls.Add(progressBar2);
-            Controls.Add(progressBar1);
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -248,10 +204,6 @@
         private Button button3;
         private Button button4;
         private Label label1;
-        private ProgressBar progressBar1;
-        private ProgressBar progressBar2;
-        private ProgressBar progressBar3;
-        private ProgressBar progressBar4;
         private Button button5;
         private Button button6;
         private Label label2;
