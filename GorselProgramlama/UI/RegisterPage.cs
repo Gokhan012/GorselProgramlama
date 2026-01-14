@@ -30,9 +30,21 @@ public partial class RegisterPage : Form
                 MessageBox.Show("Lütfen tüm alanları doldurunuz.");
                 return;
             }
+            else if (textBox1.Text.Trim().Length < 7 || textBox1.Text.Trim().Length > 9)
+            {
+                MessageBox.Show("Lütfen geçerli  bir plaka giriniz.", "Hatalı Plaka");
+            }
+            else if (textBox2.Text.Trim().Length < 6)
+            {
+                MessageBox.Show("Şifreniz çok kısa! En az 6 karakter olmalı.", "Zayıf Şifre");
+            }
+            else if (textBox2.Text != textBox3.Text)
+            {
+                MessageBox.Show("Şifreler eşleşmiyor. Lütfen tekrar giriniz.", "Şifre Hatası");
+            }
             else
             {
-                authService.CreateUser(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+                authService.CreateUser(textBox1.Text.Trim().ToUpper(), textBox2.Text.Trim(), textBox3.Text.Trim(), textBox4.Text.Trim(), textBox5.Text.Trim());
 
                 MessageBox.Show("Kayıt Başarılı! Giriş sayfasına yönlendiriliyorsunuz.");
 

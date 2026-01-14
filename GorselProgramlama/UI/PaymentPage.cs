@@ -44,7 +44,7 @@ namespace GorselProgramlama.UI
                 _hesaplananUcret = (decimal)toplamSaat * saatlikUcret;
 
                 label1.Text = $"Giriş: {girisSaati.ToShortTimeString()}\nÇıkış: {cikisSaati.ToShortTimeString()}\nSüre: {toplamSaat} Saat";
-                label2.Text = $"{_hesaplananUcret} TL";
+                label2.Text = $"Hesaplanan Ücret: {_hesaplananUcret} TL";
             }
             catch (Exception ex)
             {

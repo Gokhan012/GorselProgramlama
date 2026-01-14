@@ -64,6 +64,7 @@ namespace GorselProgramlama.UI
         {
             foreach (Button btn in TumButonlariGetir(this))
             {
+                btn.Font = new Font("Microsoft Sans Serif",20, FontStyle.Bold);
                 btn.BackColor = Color.GreenYellow;
                 btn.Text = "BOŞ";
                 btn.Enabled = true;
@@ -134,7 +135,7 @@ namespace GorselProgramlama.UI
             bool zatenAraciVar = _parkRepo.KullanicininIcerideAraciVarMi(AuthService.CurrentUserId);
             if (zatenAraciVar)
             {
-                MessageBox.Show("Otoparkta zaten bir aracınız var! Aynı anda sadece tek bir yere park edebilirsiniz.",
+                MessageBox.Show("Otoparkta bu plakaya sahip olan bir araba zaten var.",
                                 "İşlem Engellendi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

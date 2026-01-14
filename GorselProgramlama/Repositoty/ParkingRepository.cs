@@ -17,8 +17,6 @@ namespace GorselProgramlama.Repositoty
                 try
                 {
                     conn.Open();
-                    // tblParkIslemleri ile tblUser tablolarını birleştiriyoruz.
-                    // Böylece Park tablosunda plaka olmasa bile User tablosundan plakayı çekebiliyoruz.
                     string query = @"
                         SELECT p.ParkYeriNumarasi, p.UserID, u.PlateNumber
                         FROM tblParkIslemleri p
@@ -47,8 +45,6 @@ namespace GorselProgramlama.Repositoty
             using (SqlConnection conn = new SqlConnection(AuthService._connString))
             {
                 conn.Open();
-                // Plaka sütunu olmadığı için INSERT işleminden sildik.
-                // Sadece UserID kaydetmek yeterli, plakayı zaten UserID'den buluyoruz.
                 string query = @"INSERT INTO tblParkIslemleri (UserID, KatNumarasi, ParkYeriNumarasi, GirisSaati, Durum) 
                                  VALUES (@uid, @kat, @park, @tarih, 1)";
 
@@ -124,7 +120,7 @@ namespace GorselProgramlama.Repositoty
             }
         }
 
-        public void AracCikisYap(int userId, int katNo, int parkNo)//Ücret kaydı tutulmuyor ödendikten sonra sistemden siliniyor.
+        public void AracCikisYap(int userId, int katNo, int parkNo)
         {
             using (SqlConnection conn = new SqlConnection(AuthService._connString))
             {

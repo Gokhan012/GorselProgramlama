@@ -14,12 +14,10 @@ public class AuthRepository : IAuthRepository
 
     public void CreateUser(tblUser user)
     {
-        // Using bloğu bağlantıyı iş bitince otomatik kapatır.
         using (var conn = new SqlConnection(AuthService._connString))
         {
             conn.Open();
 
-            // Sütun isimlerini açıkça belirtmek zorundayız.
             string query = "INSERT INTO dbo.tblUser (PlateNumber, Password, Name, Surname) VALUES (@plaka, @sifre, @ad, @soyad)";
 
             using (var cmd = new SqlCommand(query, conn))
@@ -34,16 +32,13 @@ public class AuthRepository : IAuthRepository
         }
     }
 
-    // Kullanıcıyı Plaka numarasına veya Kullanıcı Adına göre çekmeliyiz. 
-    // ID ile değil, çünkü Login ekranında ID girilmez.
     public tblUser GetUser(string plateNumber)
     {
-        tblUser u = null; // Başlangıçta null olsun.
+        tblUser u = null; 
 
         using (var conn = new SqlConnection(AuthService._connString))
         {
             conn.Open();
-            // Sorguyu PlateNumber'a göre yapıyoruz
             var cmd = new SqlCommand("SELECT * FROM dbo.tblUser WHERE PlateNumber = @p", conn);
             cmd.Parameters.AddWithValue("@p", plateNumber);
 
@@ -52,10 +47,9 @@ public class AuthRepository : IAuthRepository
                 if (dr.Read())
                 {
                     u = new tblUser();
-                    // Veritabanı sütun isimlerinizin doğru olduğundan emin olun
                     u.ID = Convert.ToInt32(dr["Id"]);
                     u.PlateNumber = dr["PlateNumber"].ToString();
-                    u.Password = dr["Password"].ToString(); // DB'deki hashli şifre
+                    u.Password = dr["Password"].ToString(); 
                     u.Name = dr["Name"].ToString();
                     u.Surname = dr["Surname"].ToString();
                 }
@@ -67,8 +61,6 @@ public class AuthRepository : IAuthRepository
     public class ParkingRepository
     {
         
-
-        // Belirli bir kattaki DOLU park yerlerini getirir
         public List<tblParkIslemleri> GetDoluParkYerleri(int katNo)
         {
             List<tblParkIslemleri> doluYerListesi = new List<tblParkIslemleri>();
@@ -77,10 +69,6 @@ public class AuthRepository : IAuthRepository
             {
                
                     conn.Open();
-
-                    // Sadece Çıkış Saati NULL olanları (Hala içeridekileri) getir
-                    // Eğer Plaka bilgisini de çekmek istersen JOIN kullanman gerekir.
-                    // Şimdilik sadece UserID ve ParkYeriNumarasi çekiyoruz.
                     string query = @"
                         SELECT ParkYeriNumarasi, UserID, GirisSaati 
                         FROM tblParkIslemleri 
@@ -96,7 +84,6 @@ public class AuthRepository : IAuthRepository
                             {
                                 tblParkIslemleri kayit = new tblParkIslemleri();
 
-                                // Veritabanından gelenleri class'a doldur
                                 kayit.ParkYeriNumarasi = Convert.ToInt32(reader["ParkYeriNumarasi"]);
                                 kayit.UserID = Convert.ToInt32(reader["UserID"]);
                                 kayit.GirisSaati = Convert.ToDateTime(reader["GirisSaati"]);
@@ -117,8 +104,6 @@ public class AuthRepository : IAuthRepository
         {
             conn.Open();
 
-            // SQL Kodu: Önce Park İşlemleri, Sonra Kullanıcılar silinir.
-            // ID sayaçları (Identity) 0'a eşitlenir.
             string query = @"
             DELETE FROM tblParkIslemleri;
             DBCC CHECKIDENT ('tblParkIslemleri', RESEED, 0);

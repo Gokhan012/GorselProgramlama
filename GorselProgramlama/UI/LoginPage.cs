@@ -21,13 +21,6 @@ public partial class LoginPage : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        //if(textBox1.Text=="admin" && textBox2.Text=="admin")
-        // {
-        //     MessageBox.Show("Admin Girişi Başarılı");
-        //     AdminPage adminPage = new AdminPage();
-        //     adminPage.Show();
-        //     this.Hide();
-        // }
         if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
         {
             MessageBox.Show("Lütfen plaka ve şifre alanlarını doldurunuz.");
@@ -60,15 +53,5 @@ public partial class LoginPage : Form
         button1.TabIndex = 2;
         button2.TabIndex = 3;
         this.AcceptButton = button1;
-    }
-
-    private void label2_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void label3_Click(object sender, EventArgs e)
-    {
-
     }
 }

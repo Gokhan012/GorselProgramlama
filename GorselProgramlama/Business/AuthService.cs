@@ -1,6 +1,6 @@
 ﻿using GorselProgramlama.Data;
 using GorselProgramlama.Repositoty;
-using GorselProgramlama.UI; // UI referansı
+using GorselProgramlama.UI; 
 using System.Security.Cryptography;
 using System.Text;
 
