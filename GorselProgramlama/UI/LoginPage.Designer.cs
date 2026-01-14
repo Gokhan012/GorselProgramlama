@@ -42,6 +42,7 @@
             // 
             // textBox1
             // 
+            textBox1.CharacterCasing = CharacterCasing.Upper;
             textBox1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
             textBox1.Location = new Point(172, 68);
             textBox1.Margin = new Padding(4, 5, 4, 5);
@@ -114,6 +115,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.None;
             panel1.Controls.Add(label1);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(textBox1);
@@ -127,6 +129,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 162);
@@ -147,6 +150,7 @@
             ClientSize = new Size(2200, 1040);
             Controls.Add(label3);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Margin = new Padding(4, 5, 4, 5);
             Name = "LoginPage";
             Text = "LoginPage";
