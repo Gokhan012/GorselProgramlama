@@ -61,4 +61,14 @@ public partial class LoginPage : Form
         button2.TabIndex = 3;
         this.AcceptButton = button1;
     }
+
+    private void label2_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label3_Click(object sender, EventArgs e)
+    {
+
+    }
 }
