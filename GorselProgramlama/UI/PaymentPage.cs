@@ -66,5 +66,10 @@ namespace GorselProgramlama.UI
                 MessageBox.Show("Ödeme Hatası: " + ex.Message);
             }
         }
+
+        private void PaymentPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FloorSelectionPage));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -43,111 +44,168 @@
             // 
             // button1
             // 
-            button1.Location = new Point(156, 210);
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.WhiteSmoke;
+            button1.FlatAppearance.BorderColor = Color.FromArgb(117, 117, 117);
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(268, 392);
+            button1.Margin = new Padding(5, 6, 5, 6);
             button1.Name = "button1";
-            button1.Size = new Size(231, 58);
+            button1.Size = new Size(396, 109);
             button1.TabIndex = 0;
             button1.Tag = "1";
             button1.Text = "1. KAT";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += Allbuttons_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(447, 210);
+            button2.Anchor = AnchorStyles.None;
+            button2.BackColor = Color.WhiteSmoke;
+            button2.FlatAppearance.BorderColor = Color.FromArgb(117, 117, 117);
+            button2.FlatAppearance.BorderSize = 2;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(767, 392);
+            button2.Margin = new Padding(5, 6, 5, 6);
             button2.Name = "button2";
-            button2.Size = new Size(231, 58);
+            button2.Size = new Size(396, 109);
             button2.TabIndex = 1;
             button2.Tag = "2";
             button2.Text = "2. KAT";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += Allbuttons_Click;
             // 
             // button3
             // 
-            button3.Location = new Point(765, 210);
+            button3.Anchor = AnchorStyles.None;
+            button3.BackColor = Color.WhiteSmoke;
+            button3.FlatAppearance.BorderColor = Color.FromArgb(117, 117, 117);
+            button3.FlatAppearance.BorderSize = 2;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button3.ForeColor = Color.Black;
+            button3.Location = new Point(1312, 392);
+            button3.Margin = new Padding(5, 6, 5, 6);
             button3.Name = "button3";
-            button3.Size = new Size(231, 58);
+            button3.Size = new Size(396, 109);
             button3.TabIndex = 2;
             button3.Tag = "3";
             button3.Text = "3. KAT";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += Allbuttons_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(1069, 210);
+            button4.Anchor = AnchorStyles.None;
+            button4.BackColor = Color.WhiteSmoke;
+            button4.FlatAppearance.BorderColor = Color.FromArgb(117, 117, 117);
+            button4.FlatAppearance.BorderSize = 2;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button4.ForeColor = Color.Black;
+            button4.Location = new Point(1832, 392);
+            button4.Margin = new Padding(5, 6, 5, 6);
             button4.Name = "button4";
-            button4.Size = new Size(231, 58);
+            button4.Size = new Size(396, 109);
             button4.TabIndex = 3;
             button4.Tag = "4";
             button4.Text = "4. KAT";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += Allbuttons_Click;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label1.Location = new Point(584, 70);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(1019, 131);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(255, 65);
+            label1.Size = new Size(406, 96);
             label1.TabIndex = 4;
             label1.Text = "Kat Seçiniz";
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(156, 274);
+            progressBar1.Anchor = AnchorStyles.None;
+            progressBar1.Location = new Point(268, 512);
+            progressBar1.Margin = new Padding(5, 6, 5, 6);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(231, 23);
+            progressBar1.Size = new Size(396, 43);
             progressBar1.TabIndex = 5;
             // 
             // progressBar2
             // 
-            progressBar2.Location = new Point(447, 274);
+            progressBar2.Anchor = AnchorStyles.None;
+            progressBar2.Location = new Point(767, 512);
+            progressBar2.Margin = new Padding(5, 6, 5, 6);
             progressBar2.Name = "progressBar2";
-            progressBar2.Size = new Size(231, 23);
+            progressBar2.Size = new Size(396, 43);
             progressBar2.TabIndex = 6;
             // 
             // progressBar3
             // 
-            progressBar3.Location = new Point(765, 274);
+            progressBar3.Anchor = AnchorStyles.None;
+            progressBar3.Location = new Point(1312, 512);
+            progressBar3.Margin = new Padding(5, 6, 5, 6);
             progressBar3.Name = "progressBar3";
-            progressBar3.Size = new Size(231, 23);
+            progressBar3.Size = new Size(396, 43);
             progressBar3.TabIndex = 7;
             // 
             // progressBar4
             // 
-            progressBar4.Location = new Point(1069, 274);
+            progressBar4.Anchor = AnchorStyles.None;
+            progressBar4.Location = new Point(1832, 512);
+            progressBar4.Margin = new Padding(5, 6, 5, 6);
             progressBar4.Name = "progressBar4";
-            progressBar4.Size = new Size(231, 23);
+            progressBar4.Size = new Size(396, 43);
             progressBar4.TabIndex = 8;
             // 
             // button5
             // 
-            button5.Location = new Point(608, 469);
+            button5.Anchor = AnchorStyles.None;
+            button5.BackColor = Color.FromArgb(255, 152, 0);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(1064, 876);
+            button5.Margin = new Padding(5, 6, 5, 6);
             button5.Name = "button5";
-            button5.Size = new Size(231, 58);
+            button5.Size = new Size(396, 109);
             button5.TabIndex = 9;
             button5.Text = "Park Yerini Bulunuz";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
             // button6
             // 
-            button6.Location = new Point(1307, 526);
+            button6.Anchor = AnchorStyles.None;
+            button6.BackColor = Color.FromArgb(211, 47, 47);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(2240, 982);
+            button6.Margin = new Padding(5, 6, 5, 6);
             button6.Name = "button6";
-            button6.Size = new Size(130, 57);
+            button6.Size = new Size(223, 106);
             button6.TabIndex = 10;
             button6.Text = "Veritabanı sıfırlama";
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             button6.Click += button6_Click;
             // 
             // FloorSelectionPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1473, 612);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(2525, 1142);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(progressBar4);
@@ -159,6 +217,10 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            DoubleBuffered = true;
+            Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            ForeColor = Color.White;
+            Margin = new Padding(5, 6, 5, 6);
             Name = "FloorSelectionPage";
             Text = "FloorSelectionPage";
             ResumeLayout(false);
